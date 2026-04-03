@@ -5,47 +5,72 @@
 .fullscreen-enabled .my-component {
   background: #000;
 }
+
+.buttons-container {
+  padding: 0.5rem;
+}
+
 .buttons-container p {
   margin: 0;
 }
+
 .button-container {
   display: flex;
   flex-direction: column;
+  margin: 0.5rem 0;
 }
 
 .button {
   width: 100%;
   flex: 1;
   background-color: #fefbff;
+  min-height: 44px;
+  font-size: 16px;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.button:active {
+  background-color: #e8e8e8;
 }
 
 .container {
-  padding: 11px;
-  margin: 11px;
+  padding: 0.5rem;
+  margin: 0;
   background: rgb(163, 38, 38);
   display: flex;
   flex-direction: column;
-  height: 100%;
+  min-height: 100vh;
+  padding-bottom: 80px;
 }
 
 .transcript {
-  font-size: calc(5vw);
+  font-size: 1.25rem;
   direction: ltr;
   text-align: left;
   color: rgb(255, 246, 163);
-  overflow: auto;
+  overflow-y: auto;
+  padding: 1rem;
+  line-height: 1.5;
+  word-wrap: break-word;
 }
 
 .final-transcript,
 .translation {
-  font-size: calc(5vw);
+  font-size: 1.25rem;
   direction: ltr;
   text-align: left;
-  color: gray;
-  overflow: auto;
+  color: #e0e0e0;
+  overflow-y: auto;
   max-height: 40vh;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 1rem;
+  line-height: 1.5;
+  word-wrap: break-word;
 }
 
 .is-rtl {
@@ -54,65 +79,78 @@
 }
 
 @media screen and (max-width: 767px) {
-  /* Apply styles for mobile devices */
   .container {
-    background-color: lightblue;
-    padding: 20px;
+    padding: 0.5rem;
     margin: 0;
-    height: auto;
+    min-height: 100vh;
+    padding-bottom: 80px;
   }
 
   .transcript,
   .final-transcript,
   .translation {
-    font-size: calc(5vw);
-    /* Adjust the font size as needed */
-    color: darkblue;
+    font-size: 1.125rem;
+    padding: 0.75rem;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 
-    margin-top: 0px;
-    margin-bottom: 0px;
+  .button {
+    min-height: 48px;
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .buttons-container {
+    padding: 0.25rem;
+  }
+
+  .centeredContainer h1 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
   }
 }
 
 @media screen and (max-width: 767px) and (orientation: portrait) {
-  /* Apply styles for mobile devices with vertical screen */
-  /* Adjust the styles as per your requirements */
   .container {
-    background-color: lightgreen;
-    padding: 10px;
-    margin: 5px;
-    height: auto;
+    padding: 0.5rem;
+    margin: 0;
+    min-height: 100vh;
   }
 
   .transcript,
   .final-transcript,
   .translation {
-    font-size: calc(10vw);
-    /* Adjust the font size as needed */
-    color: darkgreen;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    font-size: 1.5rem;
+    padding: 1rem;
+    min-height: 20vh;
+  }
+
+  .button {
+    min-height: 52px;
+    font-size: 1.125rem;
   }
 }
 
 @media screen and (max-width: 767px) and (orientation: landscape) {
-  /* Apply styles for mobile devices with landscape screen */
-  /* Adjust the styles as per your requirements */
   .container {
-    background-color: lightyellow;
-    padding: 15px;
-    margin: 10px;
-    height: auto;
+    padding: 0.5rem;
+    margin: 0;
+    min-height: 100vh;
   }
 
   .transcript,
   .final-transcript,
   .translation {
-    font-size: calc(5vw);
-    /* Adjust the font size as needed */
-    color: darkorange;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    font-size: 1rem;
+    padding: 0.5rem;
+    max-height: 30vh;
+  }
+
+  .button {
+    min-height: 40px;
+    font-size: 0.875rem;
+    padding: 0.5rem;
   }
 }
 
@@ -128,4 +166,39 @@
 
 .configuration {
   margin-top: 1rem;
+}
+
+.translation-boxes-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .translation-boxes-container {
+    flex-direction: row;
+  }
+}
+
+.container button[type="button"] {
+  min-height: 48px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+  margin: 0.25rem 0;
+}
+
+.container button[type="button"]:active {
+  transform: scale(0.98);
+}
+
+@media (hover: hover) {
+  .container button:hover {
+    opacity: 0.9;
+  }
 }

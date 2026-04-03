@@ -4,14 +4,33 @@
 }
 
 .fullscreen-container:fullscreen {
-  border: 2px solid #000;
-  padding: 10px;
+  border: none;
+  padding: 1rem;
+  background: #000;
 }
 
 .fullscreen-enabled {
   background: rgb(0, 0, 0);
+  width: 100%;
 }
 
 .fullscreen-enabled .is-speaking {
   color: rgb(115, 252, 115);
+  font-weight: 500;
+}
+
+.fullscreen-enabled button {
+  min-height: 48px;
+  font-size: 1.125rem;
+}
+
+@media screen and (max-width: 767px) {
+  .fullscreen-container:fullscreen {
+    padding: 0.5rem;
+  }
+
+  .fullscreen-enabled button {
+    min-height: 52px;
+    font-size: 1.25rem;
+  }
 }
