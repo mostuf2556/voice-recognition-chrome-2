@@ -13,13 +13,30 @@ const CheckBoxSwitch: React.FC<Props> = ({
 }) => {
   return (
     <div className="configuration">
-      <label>
+      <label
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "0.75rem",
+          padding: "0.75rem",
+          backgroundColor: "#f0f0f0",
+          borderRadius: "8px",
+          cursor: "pointer",
+          fontSize: "1rem",
+          minHeight: "44px",
+        }}
+      >
         <input
           type="checkbox"
           checked={isModeValue}
           onChange={() => setIsModeValue(!isModeValue)}
+          style={{
+            width: "24px",
+            height: "24px",
+            cursor: "pointer",
+          }}
         />
-        {title}
+        <span>{title}</span>
       </label>
     </div>
   );
