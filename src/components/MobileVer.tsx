@@ -387,7 +387,7 @@ const MobileVer = () => {
           setSpeakEnable={setSpeakEnable}
           switchBetweenToAndFromLangs={switchBetweenToAndFromLangs}
         />
-        <Accordion title={"languages"} style={{ height: "60px" }}>
+        <Accordion title={"languages"}>
           <div
             style={{
               display: "flex",
@@ -397,7 +397,8 @@ const MobileVer = () => {
             }}
           >
             <div
-              style={{ display: "flex", flexDirection: "row", width: "100%" }}
+              className="translation-boxes-container"
+              style={{ display: "flex", flexDirection: "column", width: "100%" }}
             >
               <TranslationBox
                 isActiveTalking={!!transcript}

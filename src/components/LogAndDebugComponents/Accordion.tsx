@@ -32,11 +32,26 @@ const Accordion: React.FC<AccordionProps> = ({ title, children, timeout }) => {
   };
 
   return (
-    <div style={{ width: '100%' }}>
-      <button style={{ width: '100%' }} onClick={toggleAccordion}>
-        {title}
+    <div style={{ width: '100%', margin: '0.5rem 0' }}>
+      <button
+        style={{
+          width: '100%',
+          minHeight: '44px',
+          padding: '0.75rem',
+          fontSize: '1rem',
+          borderRadius: '8px',
+          backgroundColor: isExpanded ? '#4CAF50' : '#f0f0f0',
+          color: isExpanded ? 'white' : '#333',
+          border: '1px solid #ddd',
+          cursor: 'pointer',
+          transition: 'all 0.2s',
+          fontWeight: '500'
+        }}
+        onClick={toggleAccordion}
+      >
+        {isExpanded ? '▼ ' : '▶ '}{title}
       </button>
-      {isExpanded && <div>{children}</div>}
+      {isExpanded && <div style={{ padding: '0.5rem', marginTop: '0.5rem' }}>{children}</div>}
     </div>
   );
 };
